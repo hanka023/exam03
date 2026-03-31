@@ -80,9 +80,7 @@ void write_str(char *s, char *start)
 
 void swap (char *a, char *b)
 {
-    char c;
-
-    c = *a;
+    char c = *a;
     *a = *b;
     *b = c;
 }
