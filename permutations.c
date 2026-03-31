@@ -96,7 +96,7 @@ void perm(char *str, char *s, char *start)
         return;
     }
 
-    /*  DIVNA LOGIKA  - NAUCIT SE NAZPAMET !!! */
+ /*  DIVNA LOGIKA  - NAUCIT SE NAZPAMET !!! */
 
     s = str;
     while (*s != '\0')
@@ -107,7 +107,7 @@ void perm(char *str, char *s, char *start)
         ++s;
     }
 
-   /* * * * * * * * * * * * * * * * * * * * */
+/* * * * * * * * * * * * * * * * * * * * */
   
 }
 
