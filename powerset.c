@@ -1,3 +1,6 @@
+// https://github.com/tdanielsousa/42_school_new_exams_rank_03/tree/main/level2
+
+
 // Assignment name : powerset
 // Expected files : *.c *.h
 // Allowed functions : atoi, printf, malloc, calloc, realloc, free.
