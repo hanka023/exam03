@@ -68,7 +68,7 @@ void print_solution(char **board, char board_size)
 }
 
 
-void print_board(char **board, int board_size)
+char **print_board(char **board, int board_size)
 {
     int i;
     int j;
@@ -87,7 +87,7 @@ void print_board(char **board, int board_size)
         ++i;
     }
      printf ("\n");
-    return;
+    return (board);
 }
 
 
@@ -109,6 +109,95 @@ char **clear_board(char **board, int board_size)
     }
     return (board);
 }
+
+
+
+// void clear_rest_board(char **board, int board_size, int a, int b)
+// {
+//     //clear column
+//     int i = a;
+//     int j = b;
+//     while (i < board_size)
+//     {
+//         board[i][j] == '.';
+//         ++i;
+//     }
+//     i = a;
+//     j = b;
+//     //clear row
+//     while (j < board_size)
+//     {
+//         board[i][j] = '.';
+//         ++j;
+//     }  
+//     //clear diagonal
+//     i = a;
+//     j = b;
+//     while (i < board_size && j < board_size)
+//     {
+//         board[i][j] = '.';
+//         ++i;
+//         ++j;
+//     }
+//     i = a;
+//     j = b;
+//     while (i < board_size && j > 0)
+//     {
+//         board[i][j] = '.';
+//         ++i;
+//         --j;
+//     }
+//     return ;
+// }
+
+// void x_column(char **board, int board_size, int a, int b)
+// {
+//     int i = a;
+//     int j = b;
+
+//     while (i < board_size)
+//     {
+//         if (board[i][j] == '.' )
+//             board[i][j] = '-';
+//         ++i;
+//     }
+//     return;
+// }
+
+// void x_diagonal(char **board, int board_size, int a, int b)
+// {
+//     int i = a;
+//     int j = b;
+
+//     while (i < board_size && j < board_size)
+//     {
+//         if (board[i][j] == '.')
+//             board[i][j] = '-';
+//         ++i;
+//         ++j;
+//     }
+//     i = a;
+//     j = b;
+//     while (i < board_size && j > 0)
+//     {
+//         if (board[i][j] == '.')
+//             board[i][j] = '-';
+//         ++i;
+//         --j;
+//     }
+//     return;
+// }
+
+// void x_row(char **board, int board_size,int i, int j)
+// {
+//      while(j < board_size)
+//             {
+//                 if (board[i][j] == '.')
+//                     board[i][j] = '-';
+//                 ++j;
+//             }
+//     return;
+// }
 
 int is_safe (char **board, int board_size, int a, int b)
 {
@@ -168,7 +257,25 @@ int queen_to_row(char **board, int board_size, int i, int queen)
          {
             print_solution(board, board_size);
            // print_board(board, board_size);   //u can use this function for see result
-            return (1);
+            return (1);char **clear_board(char **board, int board_size)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < board_size)
+    {
+        j = 0;
+        while (j < board_size)
+        {
+            board [i][j] = '.';
+            ++j;
+        }
+        ++i;
+    }
+    return (board);
+}
+
          }
          return(0);
     }
@@ -189,6 +296,18 @@ int queen_to_row(char **board, int board_size, int i, int queen)
     return (0);
 }
 
+// int queen_to_board(char **board, int board_size)
+// {
+//     int i;
+//     int queen;
+
+//     i = 0;
+//     queen = 0;
+//     queen_to_row(board, board_size, i, queen);
+//     return (0);
+// }
+
+
 int main (int argc, char *argv[])
 {
     int i;
@@ -207,7 +326,6 @@ int main (int argc, char *argv[])
     
     board = make_board(board_size);     // allocate board
     clear_board (board, board_size);    // need to fill all board with '.'
-    print_board (board, board_size);
     queen_to_row(board, board_size, i, queen);
     free_board(board, board_size);
     return(0);

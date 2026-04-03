@@ -80,6 +80,7 @@ void power(int *arr, int *mini_arr, int big_num, int len, int sum, int i, int j)
         }
         return;   
     }
+    
     mini_arr[j] = arr[i];
     power(arr, mini_arr, big_num, len, sum + arr[i], i+1, j+1);
     
